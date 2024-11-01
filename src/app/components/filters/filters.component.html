@@ -1,0 +1,16 @@
+<label>
+  Search by Name:
+  <input [(ngModel)]="searchTerm" (input)="applyFilters()" />
+</label>
+  
+<label>
+  Filter by Supply/Chain:
+  <select [(ngModel)]="supplyChainOption" (change)="applyFilters()">
+    <option value="">All</option>
+    <option value="Option1">Radio Option 1</option>
+    <option value="Option2">Radio Option 2</option>
+  </select>
+</label>
+
+<button (click)="duplicateItem()">Duplicate Item</button>
+  

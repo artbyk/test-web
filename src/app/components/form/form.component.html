@@ -1,0 +1,46 @@
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <label>
+        Text Input (min length 3):
+        <input formControlName="textInput" type="text" />
+        <div *ngIf="myForm.get('textInput')?.invalid && myForm.get('textInput')?.touched">
+          
+        </div>
+      </label>
+    
+      <label>
+        Number Input:
+        <input formControlName="numberInput" type="number" />
+        <div *ngIf="myForm.get('numberInput')?.invalid && myForm.get('numberInput')?.touched">
+          
+        </div>
+      </label>
+    
+      <div>
+        <label>
+          <input type="radio" formControlName="radioOption" value="Option1" /> Option 1
+        </label>
+        <label>
+          <input type="radio" formControlName="radioOption" value="Option2" /> Option 2
+        </label>
+      </div>
+    
+      <div formGroupName="checkboxes">
+        <label>
+          <input type="checkbox" formControlName="optionA" /> Option A
+        </label>
+        <label>
+          <input type="checkbox" formControlName="optionB" /> Option B
+        </label>
+      </div>
+    
+      <label>
+        Select Option:
+        <select formControlName="selectOption">
+          <option value="" disabled>Select an option</option>
+          <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+        </select>
+      </label>
+    
+      <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    </form>
+    

@@ -1,0 +1,17 @@
+<app-filters [items]="items" (filter)="onFilter($event)"></app-filters>
+
+<ul>
+  <li *ngFor="let item of filteredItems">
+    <div>Name input: {{ item.textInput }}</div>
+    <div>Number input: {{ item.numberInput }}</div>
+    <div>Radio input: {{ item.radioOption }}</div>
+    <div>Selected options: {{ item.selectOption }}</div>
+    <div>Сheckboxes: <br />
+      <span *ngFor="let checkbox of item.checkboxes | keyvalue">
+        {{ checkbox.key }}: {{ checkbox.value ? 'True' : 'False' }}
+      </span>
+    </div>
+  </li>
+</ul>
+
+<button (click)="toggleFormVisibility()">Add New Project</button>
