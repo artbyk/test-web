@@ -1,0 +1,136 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex: 0 0 10%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.03em;
+    color: #48588D;
+}
+
+.logo-subtitle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.2em;
+    color: #ACACAC;
+}
+
+.token-header {
+    flex: 0 0 15%;
+    text-align: center;
+}
+
+.token-header h4 {
+    margin: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 132%;
+    text-align: center;
+    color: #000000;
+}
+
+.token-header p {
+    margin: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 148%;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+.main-content {
+    display: flex;
+    flex: 0 0 60%;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 15%;
+    padding: 0 20px;
+    font-size: 0.9rem;
+}
+
+.footer-rights {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    text-align: left;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+    flex: 1;
+    justify-content: center;
+}
+
+.footer-links a {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 132%;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none; 
+}
+
+.footer-contact {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    text-align: right;
+}
+
+.footer-contact a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}

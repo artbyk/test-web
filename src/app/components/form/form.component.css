@@ -1,36 +1,172 @@
-/* Стили для формы */
 form {
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-  }
-  
-input[type="text"],
-input[type="number"],
-select {
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #000;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
     box-sizing: border-box;
+    outline: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.display-flex{
+    display: flex;
+    align-items: center;
+    padding-top:10px;
+}
+.custom-dropdown {
+    font-size: 16px;
+    border: none;
+    appearance: none;
+    box-sizing: border-box;
+    position: relative;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 132%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    -webkit-appearance: none; /* Убирает стандартный стиль для WebKit */
+    -moz-appearance: none; /* Убирает стандартный стиль для Firefox */
+    outline: none;
+    cursor: pointer;
 }
 
-div {
-    margin-bottom: 15px;
+.custom-dropdown option {
+    padding: 100px; 
 }
 
-label {
-    margin-right: 15px;
+.custom-dropdown:focus {
+    border-color: #ccc;
+    box-shadow: none; 
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+}
+
+.radio-label {
+    position: relative;
+}
+
+.hidden-radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.description-style{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: #727272;
+    padding-bottom: 4px;
+}
+.radio-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.radio-label input[type="radio"]:checked + .radio-btn {
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+    color: white;
+}
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
     font-weight: bold;
 }
 
+.custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin-right: 10px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.custom-checkbox:checked {
+    background-color: white;
+}
+
+.custom-checkbox:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-text {
+    color: #000;
+}
 
 
+.save-draft-button {
+    width: 42%;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 48px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
 
-  
+.save-draft-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.save-draft-button:hover:not(:disabled) {
+    background-color: #b71c1c;
+}

@@ -16,11 +16,15 @@ input[type="text"] {
 }
 
 select {
+   width: 100%;
     padding: 10px;
-    margin-top: 5px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: bold;
+    border-radius: 8px;
 }
 
 
@@ -36,5 +40,17 @@ button {
 
 button:hover {
     background-color: #007bb5;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: bold;
+    border-radius: 8px;
 }
   

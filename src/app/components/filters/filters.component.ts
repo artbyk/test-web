@@ -1,11 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { DataService } from '../../services/data.service';
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.css']
 })
-export class FiltersComponent {
+export class FiltersComponent implements OnChanges {
   @Input() items: any[] = [];
   @Output() filter = new EventEmitter<any[]>();
 
@@ -14,11 +14,19 @@ export class FiltersComponent {
 
   constructor(private dataService: DataService) {}
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['items']) {
+      this.applyFilters();
+    }
+  }
+
   applyFilters() {
     let filtered = this.items;
 
     if (this.searchTerm) {
-      filtered = filtered.filter(item => item.textInput.includes(this.searchTerm));
+      filtered = filtered.filter(item =>
+        item.textInput.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
     }
 
     if (this.supplyChainOption) {
@@ -33,7 +41,6 @@ export class FiltersComponent {
       const itemToDuplicate = this.items[0];
       const duplicatedItem = { ...itemToDuplicate };
       this.dataService.addItem(duplicatedItem);
-      this.applyFilters();
     }
   }
 }

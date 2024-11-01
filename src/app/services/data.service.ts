@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class DataService {
-  private items = new BehaviorSubject<any[]>([]);
-  items$ = this.items.asObservable();
+  private itemsSource = new BehaviorSubject<any[]>([]);
+  items$ = this.itemsSource.asObservable();
 
-  private formVisible = new BehaviorSubject<boolean>(true);
-  formVisible$ = this.formVisible.asObservable();
+  private formVisibleSource = new BehaviorSubject<boolean>(true);
+  formVisible$ = this.formVisibleSource.asObservable();
 
   addItem(item: any) {
-    const currentItems = this.items.value;
-    this.items.next([...currentItems, item]);
+    const currentItems = this.itemsSource.value;
+    this.itemsSource.next([...currentItems, item]);
   }
 
   toggleFormVisibility() {
-    this.formVisible.next(!this.formVisible.value);
+    const currentVisibility = this.formVisibleSource.value;
+    this.formVisibleSource.next(!currentVisibility);
   }
 }

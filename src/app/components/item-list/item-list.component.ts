@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
@@ -9,22 +10,39 @@ export class ItemListComponent implements OnInit {
   items: any[] = [];
   filteredItems: any[] = [];
 
-  constructor(private dataService: DataService) { }
+  // Переменные фильтров
+  searchTerm: string = '';
+  supplyChainOption: string = '';
+
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.dataService.items$.subscribe(items => {
       this.items = items;
-      this.filteredItems = items;
+      this.applyFilters(); // Применяем фильтры при каждом обновлении списка
     });
-
-    console.log(this.items);
   }
 
-  onFilter(filteredItems: any[]) {
-    this.filteredItems = filteredItems;
+  applyFilters() {
+    this.filteredItems = this.items.filter(item => {
+      // Проверка поиска по имени
+      const matchesName = item.textInput.toLowerCase().includes(this.searchTerm.toLowerCase());
+
+      // Проверка фильтрации по Supply/Chain
+      const matchesSupplyChain = this.supplyChainOption
+        ? item.radioOption === this.supplyChainOption
+        : true;
+
+      
+      return matchesName && matchesSupplyChain;
+    });
   }
 
-  public toggleFormVisibility(): void {
+  onFilter(filtered: any[]) {
+    this.filteredItems = filtered;
+  }
+
+  toggleFormVisibility() {
     this.dataService.toggleFormVisibility();
   }
 }

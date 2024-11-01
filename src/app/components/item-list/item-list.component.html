@@ -1,17 +1,19 @@
-<app-filters [items]="items" (filter)="onFilter($event)"></app-filters>
+<div class="form-container">
+  <!-- Фильтры -->
+  <app-filters [items]="items" (filter)="onFilter($event)"></app-filters>
 
-<ul>
-  <li *ngFor="let item of filteredItems">
-    <div>Name input: {{ item.textInput }}</div>
-    <div>Number input: {{ item.numberInput }}</div>
-    <div>Radio input: {{ item.radioOption }}</div>
-    <div>Selected options: {{ item.selectOption }}</div>
-    <div>Сheckboxes: <br />
-      <span *ngFor="let checkbox of item.checkboxes | keyvalue">
-        {{ checkbox.key }}: {{ checkbox.value ? 'True' : 'False' }}
-      </span>
-    </div>
-  </li>
-</ul>
+  <!-- Список элементов -->
+  <ul class="item-list">
+    <li *ngFor="let item of filteredItems" class="item">
+      <div class="item-field">Name: {{ item.textInput }}</div>
+      <div class="item-field">Supply: {{ item.numberInput }}</div>
+      <div class="item-field">Blockchain: {{ item.radioOption }}</div>
+      <div class="item-field">Company: {{ item.selectOption }}</div>
+      <div class="item-field">
+        Supply: {{ item.checkboxes && item.checkboxes.optionA ? 'Enabled' : 'Disabled' }}
+      </div>
+    </li>
+  </ul>
 
-<button (click)="toggleFormVisibility()">Add New Project</button>
+  <button (click)="toggleFormVisibility()" class="add-project-button">Add New Project</button>
+</div>

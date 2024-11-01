@@ -1,14 +1,14 @@
 <label>
   Search by Name:
-  <input [(ngModel)]="searchTerm" (input)="applyFilters()" />
+  <input [(ngModel)]="searchTerm" (input)="applyFilters()" class="input-field" />
 </label>
   
 <label>
   Filter by Supply/Chain:
   <select [(ngModel)]="supplyChainOption" (change)="applyFilters()">
     <option value="">All</option>
-    <option value="Option1">Radio Option 1</option>
-    <option value="Option2">Radio Option 2</option>
+    <option value="Enthereum">Enthereum</option>
+    <option value="BinanceSmartChain">Binance Smart Chain</option>
   </select>
 </label>
 

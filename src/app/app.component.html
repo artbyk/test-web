@@ -1,2 +1,39 @@
-<app-form *ngIf="formVisible | async"></app-form>
-<app-item-list *ngIf="!(formVisible | async)"></app-item-list>
+<div class="container">
+    <header class="header">
+        <div class="logo">
+            <svg width="57" height="51" viewBox="0 0 57 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.35" d="M33.5649 46.576C31.0351 51.5866 24.0998 52.1446 20.8014 47.603L0.673957 19.8895C-1.12091 17.4181 0.909242 13.9982 3.93832 14.3905C21.0449 16.6057 38.3252 11.8672 51.9092 1.2363L52.9758 0.401553C54.5143 -0.802517 56.6153 0.921433 55.7348 2.66543L33.5649 46.576Z" fill="#8797CC"/>
+                <path opacity="0.5" d="M33.5652 46.5752C31.1198 51.4186 24.3321 51.7589 21.4146 47.1843L7.75034 25.7591C6.49496 23.7907 7.88489 21.2081 10.2193 21.1717C23.4187 20.966 36.1073 16.0362 45.9834 7.27659L53.5551 0.560819C54.7924 -0.536676 56.6349 0.882611 55.8894 2.35906L33.5652 46.5752Z" fill="#7085CC"/>
+                <path d="M33.4069 46.8889C31.1833 51.2929 24.8906 51.2807 22.6843 46.868L15.333 32.1656C14.5589 30.6174 15.4588 28.7556 17.1529 28.4003C27.367 26.2586 36.6268 20.902 43.5755 13.1155L54.3546 1.03671C55.1334 0.163955 56.5206 1.10903 55.9934 2.15324L33.4069 46.8889Z" fill="#48588D"/>
+            </svg>  
+            <div>
+                <div class="logo-title">Test</div>
+                <div class="logo-subtitle">CAPITAL</div>
+            </div>
+        </div>
+    </header>
+  
+    <section class="token-header">
+      <h4>Token</h4>
+      <p>Create your own crypto token</p>
+    </section>
+  
+    <main class="main-content">
+    <div class="form-container">
+        <app-form *ngIf="formVisible$ | async"></app-form>
+        <app-item-list *ngIf="!(formVisible$ | async)"></app-item-list>
+    </div>   
+    </main>
+  
+    <footer class="footer">
+      <p class="footer-rights">ⓒ 2021 All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">TERMS</a>
+        <a href="#">PRIVACY</a>
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer-contact">
+        Contact us: <a href="mailto:ask@test.capital">{{'ask@test.capital'}}</a>
+      </div>
+    </footer>
+  </div>
